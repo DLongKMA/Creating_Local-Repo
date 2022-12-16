@@ -1,6 +1,8 @@
 # Các bước khởi tạo local Oracle Linux repo trên Ubuntu 16.04.md
 
-## Bước 1: Khởi tạo các thư mục tương ứng với Repo của NSX trên Ubuntu 16.04
+## 1. Các bước thực hiện tạo local repo cho OL8
+
+### Bước 1: Khởi tạo các thư mục tương ứng với Repo của NSX trên Ubuntu 16.04
 
 VD ở đây ta sẽ khởi tạo local repo của OL8 (Oracle Linux 8):
 
@@ -16,7 +18,7 @@ Tương ứng với các Package có trên thư viện của OL8 trên Internet:
 
 ![image](https://user-images.githubusercontent.com/75653012/208013178-cafc9641-424b-4d2a-80f8-2d0aef7a9097.png)
 
-## Bước 2: Tiến hành synchronize OL8 repositories vào local repo trên Ubuntu 16.04
+### Bước 2: Tiến hành synchronize OL8 repositories vào local repo trên Ubuntu 16.04
 
 Sử dụng reposync tool để tiến hành đồng bộ hóa OL8 repositories vào local repo trên Ubuntu 16.04
 
@@ -37,7 +39,7 @@ Giải thích command:
 - -p (DESTDIR --download_path=DESTDIR): Path to download packages to: defaults to current directory.
 - ––download-metadata: download non-default metadata
 
-Bổ sung kiến thức
+Bổ sung kiến thức:
 
 - Đồng bộ hóa all packages from the 'updates' repo to the current directory                          : reposync --repoid=updates
 - Chỉ đồng bộ hóa các gói mới nhất từ kho lưu trữ 'cập nhật' sang thư mục hiện tại                   : reposync -n --repoid=updates
@@ -46,6 +48,13 @@ Bổ sung kiến thức
 - Sync all packages from the 'updates' repo to the repos directory excluding (loại trừ) x86_64 arch  : reposync -p repos --repoid=updates
   Edit /etc/yum.conf adding option exclude=*.x86_64
   
-Lưu ý: reposync uses the yum libraries for retrieving information and packages. If no configuration file is specified, the default yum configuration will be used.
-- /etc/yum.conf
-- /etc/yum/repos.d/
+Lưu ý: 
+- reposync uses the yum libraries for retrieving information and packages. If no configuration file is specified, the default yum configuration will be used.
+  - /etc/yum.conf
+  - /etc/yum/repos.d/
+-  Nếu chúng ta muốn tiếp tục chạy các process thậm chí cả sau khi đã logout hoặc ngắt kết nối khỏi shell hiện tại, khi đó chúng ta có thể sử dụng lệnh nohup:
+   ```
+   nohup reposync -d -g -m --download-metadata -a x86_64 -r ol8_UEKR7 -r ol8_baseos_latest -r ol8_appstream_latest -r ol8_addons -c /etc/yum/yum.conf -p /repo/ol/8/ &
+   ```
+
+## 2. Bugging đang lỗi 
