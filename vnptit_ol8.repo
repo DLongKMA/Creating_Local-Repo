@@ -3,4 +3,41 @@
 Khởi tạo tại đường dẫn sau:
 
 ```
-vim
+vim /var/www/repo/resources/vnptit_ol8.repo
+```
+
+### Bước 2: Chỉnh sửa file OL8.repo
+
+Chỉnh sửa file OL8.repo như sau:
+
+```
+# VNPT IT Linux Repository
+# Oracle Linux 8 (64-bit)
+[ol8_appstream_latest]
+name=Oracle Linux 8 Appstream Latest (x86_64)
+baseurl=http://10.193.74.20/ol/8/ol8_appstream_latest
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=0
+enabled=1
+
+[ol8_baseos_latest]
+name=Oracle Linux 8 Baseos Optional Latest (x86_64)
+baseurl=http://10.193.74.20/ol/8/ol8_baseos_latest
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=0
+enabled=1
+
+[ol8_addons]
+name=Oracle Linux 8 Add ons (x86_64)
+baseurl=http://10.193.74.20/ol/8/ol8_addons
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=0
+enabled=1
+
+[ol8_UEKR7]
+name=Oracle Linux 8 _UEKR6 (x86_64)
+baseurl=http://10.193.74.20/ol/8/ol8_UEKR7
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
+gpgcheck=0
+enabled=1
+```
