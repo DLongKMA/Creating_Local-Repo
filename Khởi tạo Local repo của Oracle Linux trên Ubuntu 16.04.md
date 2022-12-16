@@ -64,3 +64,5 @@ Sau khi chạy lệnh reposync thành công, công việc bị dừng lại và 
 ![image](https://user-images.githubusercontent.com/75653012/208014849-3d0a91b8-94cf-4c34-ae86-aa3add0e3cd6.png)
 
 Sau khi pull về 41056 file rpm từ Internet, khi ls các file có trong repo của OL8 vẫn trắng tinh!
+
+![image](https://user-images.githubusercontent.com/75653012/208015060-1184d43e-aeef-4409-82cd-1f1314dd73f3.png)
