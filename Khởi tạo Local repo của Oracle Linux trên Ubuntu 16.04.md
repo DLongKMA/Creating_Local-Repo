@@ -1,4 +1,4 @@
-# Các bước khởi tạo Local repo trên Ubuntu 16.04.md
+# Các bước khởi tạo local Oracle Linux repo trên Ubuntu 16.04.md
 
 ## Bước 1: Khởi tạo các thư mục tương ứng với Repo của NSX trên Ubuntu 16.04
 
