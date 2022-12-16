@@ -58,3 +58,9 @@ Lưu ý:
    ```
 
 ## 2. Bugging đang lỗi 
+
+Sau khi chạy lệnh reposync thành công, công việc bị dừng lại và không chạy tiếp tại đây:
+
+![image](https://user-images.githubusercontent.com/75653012/208014849-3d0a91b8-94cf-4c34-ae86-aa3add0e3cd6.png)
+
+Sau khi pull về 41056 file rpm từ Internet, khi ls các file có trong repo của OL8 vẫn trắng tinh!
